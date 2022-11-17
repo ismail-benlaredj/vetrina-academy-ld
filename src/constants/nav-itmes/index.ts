@@ -6,7 +6,7 @@ import { BsTruck } from 'react-icons/bs';
 import { FiDollarSign } from 'react-icons/fi';
 import BrushIcon from '../../assets/icons/brush';
 import { FiCreditCard } from 'react-icons/fi';
-import CogPlanetIcon from '../../assets/icons/cog';
+import { ReactComponent as CogPlanetIcon } from '../../assets/icons/cog.svg';
 import NewIcon from '../../assets/icons/new';
 import { FiSettings } from 'react-icons/fi';
 import { FiLogOut } from 'react-icons/fi';

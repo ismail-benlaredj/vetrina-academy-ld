@@ -1,17 +1,19 @@
 import { ThemeProvider } from '@mui/material/styles';
+import { CssBaseline, StyledEngineProvider } from '@mui/material';
+
 import theme from './theme';
 
-import Typography from '@mui/material/Typography';
-
+import AppRoutes from './routes';
 import './App.css';
 
 function App() {
   return (
-    <ThemeProvider theme={theme()}>
-      <Typography variant="h1">
-        Hello World
-      </Typography>
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme()}>
+        <CssBaseline />
+        <AppRoutes />
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 

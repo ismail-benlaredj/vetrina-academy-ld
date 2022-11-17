@@ -57,8 +57,10 @@ function themeTypography(primaryFont: string, secondaryFont: string): Typography
         },
 
         body1: {
-            fontSize: '1.063rem',
-            lineHeight: '22px'
+            fontSize: '0.875rem',
+            fontWeight: 400,
+            fontFamily: secondaryFont,
+            lineHeight: '16px',
         },
         body2: {
             fontSize: '0.75rem',
