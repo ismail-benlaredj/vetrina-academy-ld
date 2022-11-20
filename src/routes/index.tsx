@@ -1,7 +1,7 @@
 import { RouteObject, useRoutes } from 'react-router-dom';
 import Dashboard from "../pages/dashboard"
 import Orders from "../pages/orders"
-import MainLayout from "../layout/main-layout/sidebar"
+import MainLayout from "../layout/main-layout"
 
 
 export default function AppRoutes() {
