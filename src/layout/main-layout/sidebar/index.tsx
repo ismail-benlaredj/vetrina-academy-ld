@@ -4,16 +4,13 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import IconButton from '@mui/material/IconButton';
 import { AiOutlineMenu } from 'react-icons/ai';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import Logo from '../../../assets/icons/Logo';
 import NavItem from './nav-item';
 import NavCollapse from './group-nav-item';
-import navItemsList from '../../../constants/nav-itmes';
-import { useState } from 'react';
+import { navItemsList } from '../../../constants/nav-itmes';
+import { drawerWidth } from '../../../constants/nav-itmes';
 
-
-const drawerWidth = 245;
 
 const openedMixin = (theme: Theme): CSSObject => ({
     width: drawerWidth,
@@ -51,6 +48,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 const StyledDrawer = styled(Drawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         width: drawerWidth,
+        height: 'fit-content',
         flexShrink: 0,
         whiteSpace: 'nowrap',
         boxSizing: 'border-box',

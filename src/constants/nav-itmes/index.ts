@@ -10,7 +10,10 @@ import { ReactComponent as CogPlanetIcon } from '../../assets/icons/cog.svg';
 import NewIcon from '../../assets/icons/new';
 import { FiSettings } from 'react-icons/fi';
 import { FiLogOut } from 'react-icons/fi';
-const navItemsList = [
+
+export const drawerWidth = 245;
+
+export const navItemsList = [
     {
         id: 'Dashboard',
         type: 'item',
@@ -219,5 +222,5 @@ const navItemsList = [
     },
 ]
 
-export default navItemsList;
+
 

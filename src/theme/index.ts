@@ -7,7 +7,27 @@ function theme() {
     const typography = themeTypography("'Source Sans Pro'", "'Noto Sans HK', sans-serif");
     const theme = createTheme({
         palette,
-        typography
+        typography,
+        components: {
+            MuiTypography: {
+                styleOverrides: {
+                    root: {
+                        margin: 0,
+                    },
+                }
+
+            },
+            MuiIconButton: {
+                styleOverrides: {
+                    root: {
+                        '&:hover': {
+                            backgroundColor: 'transparent',
+                        },
+                    },
+
+                }
+            }
+        }
 
     })
     return theme;

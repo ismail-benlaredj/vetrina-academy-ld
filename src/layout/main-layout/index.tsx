@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Sidebar from './sidebar';
 import Header from './header';
 import { useState } from 'react';
+// import { drawerWidth } from '../../constants/nav-itmes';
 
 export default function MainLayout() {
     const theme = useTheme();
@@ -13,13 +14,21 @@ export default function MainLayout() {
     };
 
 
+    const Main = styled('main')(({ theme }) => ({
+        marginTop: theme.spacing(8),
+        marginLeft: 0,
+        width: `calc(100% - ${theme.spacing(7)})`,
+        backgroundColor: theme.palette.background.paper,
+        minHeight: 'calc(100vh - 65px)',
+        boxSizing: 'border-box',
+    }));
     return (
         <Box sx={{ display: 'flex', color: theme.palette.text.secondary }}>
             <Header open={open} />
             <Sidebar open={open} handleDrawerState={handleDrawerState} />
-            <Box component="main" >
+            <Main>
                 <Outlet />
-            </Box>
+            </Main>
         </Box>
     )
 }
