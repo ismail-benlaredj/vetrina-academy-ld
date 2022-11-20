@@ -23,7 +23,7 @@ const NavCollapse = ({ groupItem, open }: GroupNavItemProps) => {
 
 
     const subItem = groupItem.children.map((item: any) => (
-        <> <NavItem key={item.id} item={item} open={true} /></>
+        <NavItem key={item.id} item={item} open={true} />
     ));
 
     return (

@@ -1,9 +1,9 @@
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline, StyledEngineProvider } from '@mui/material';
-
 import theme from './theme';
+import Routes from './routes';
+import { BrowserRouter } from 'react-router-dom';
 
-import AppRoutes from './routes';
 import './App.css';
 
 function App() {
@@ -11,7 +11,9 @@ function App() {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme()}>
         <CssBaseline />
-        <AppRoutes />
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
       </ThemeProvider>
     </StyledEngineProvider>
   );

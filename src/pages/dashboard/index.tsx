@@ -1,7 +1,8 @@
 import Typography from '@mui/material/Typography';
 
 export default function Dashboard() {
+    console.log('Dashboard');
     return (
-        <Typography variant='h1' sx={{ mr: '30rem', mt: '30rem' }}>Dashboard</Typography>
+        <Typography variant='h1'>benlaredj</Typography>
     )
 }

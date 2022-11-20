@@ -13,6 +13,8 @@ import NavItem from './nav-item';
 import NavCollapse from './group-nav-item';
 import navItemsList from '../../../constants/nav-itmes';
 import { useState } from 'react';
+import { Outlet } from 'react-router-dom';
+
 
 const drawerWidth = 245;
 
@@ -146,7 +148,7 @@ export default function MainLayout() {
                 <Divider />
             </StyledDrawer>
             <Box component="main" >
-
+                <Outlet />
             </Box>
         </Box>
     );

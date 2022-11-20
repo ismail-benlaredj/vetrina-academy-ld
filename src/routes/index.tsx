@@ -1,5 +1,6 @@
 import { RouteObject, useRoutes } from 'react-router-dom';
 import Dashboard from "../pages/dashboard"
+import Orders from "../pages/orders"
 import MainLayout from "../layout/main-layout/sidebar"
 
 
@@ -10,18 +11,18 @@ export default function AppRoutes() {
             element: <MainLayout />,
             children: [
                 {
-                    path: "main",
+                    path: "/",
                     element: <Dashboard />,
                 },
-                { path: "team", element: <Dashboard /> },
+                {
+                    path: "team",
+                    element: <Orders />,
+                }
             ],
-        }
+        },
+
+
     ]
 
-    const routing = useRoutes(routes);
-    return (
-        <>
-            {routing}
-        </>
-    );
+    return useRoutes(routes);
 }
