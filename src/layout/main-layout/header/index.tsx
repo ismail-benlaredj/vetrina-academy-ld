@@ -3,7 +3,6 @@ import MuiAppBar, { AppBarProps as MuiAppBarProps } from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
 import { FiZap } from 'react-icons/fi';
 import Box from '@mui/material/Box';
 import { drawerWidth } from '../../../constants/nav-itmes';
@@ -57,7 +56,6 @@ export default function Header({ open }: AppBarProps) {
     return (
 
         <AppBar position="fixed" open={open}>
-
             <StyledToolbar >
                 <Typography variant="h3" color='text.secondary' sx={{ fontWeight: '500', fontFamily: theme.typography.fontFamily.secondary }}>
                     Dashboard

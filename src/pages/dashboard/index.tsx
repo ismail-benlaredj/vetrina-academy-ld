@@ -1,10 +1,11 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
 import { styled, useTheme } from '@mui/material/styles';
 import { FiExternalLink } from 'react-icons/fi';
+import { AiOutlineEye } from 'react-icons/ai';
+import CardLayout from 'layout/dashboard-card-layout';
+import LinkComponent from 'pages/shared/LinkComponent';
 
 const LinearBox = styled('div')(({ theme }) => ({
     width: '100%',
@@ -30,8 +31,8 @@ export default function Dashboard() {
 
     return (
         <Box sx={{ position: 'relative', height: 'fit-content' }}>
-            <LinearBox >
-            </LinearBox >
+            <LinearBox />
+
             <Box sx={{
                 position: 'absolute',
                 width: '100%',
@@ -43,24 +44,30 @@ export default function Dashboard() {
                         <Typography variant='h1' sx={{ color: "primary.contrastText" }}>
                             Welcome Mario!
                         </Typography>
-
-                        <Link href="#" >
-                            <IconButton sx={{
-                                color: "primary.contrastText",
-
-                            }} >
-                                <Typography sx={{
-                                    fontSize: theme.typography.h3.fontSize,
-                                    fontWeight: 500,
-                                    marginRight: theme.spacing(2),
-                                    textDecoration: 'underline',
-                                }}>
-                                    app.vetrinalive.it/fenoh-store
-                                </Typography>
-                                <FiExternalLink style={{ width: 24, height: 24 }} />
-                            </IconButton>
-                        </Link>
+                        <LinkComponent
+                            link='#'
+                            linkText='app.vetrinalive.it/fenoh-store'
+                            Icon={FiExternalLink}
+                            styles={{
+                                fontSize: theme.typography.h3.fontSize,
+                                fontWeight: 500,
+                                marginRight: theme.spacing(2),
+                                textDecoration: 'underline',
+                            }}
+                        />
                     </StyledLinearContent>
+                </Container>
+
+                <Container fixed>
+
+                    <CardLayout
+                        linkText="Do you want more visits? Contact us!"
+                        title="Visitors"
+                        Icon={AiOutlineEye}
+                        link="#"
+                    >
+                    </CardLayout>
+
                 </Container>
             </Box>
         </Box>
