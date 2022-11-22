@@ -1,12 +1,15 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
+import Grid from '@mui/material/Grid';
+import VisitorsCard from './component/VisitorsCard';
+import OrdersCard from './component/OrdersCard';
 import { styled, useTheme } from '@mui/material/styles';
 import { FiExternalLink } from 'react-icons/fi';
 import { AiOutlineEye } from 'react-icons/ai';
 import CardLayout from 'layout/dashboard-card-layout';
 import LinkComponent from 'pages/shared/LinkComponent';
-
+import CardMenu from './component/CardMenu';
 const LinearBox = styled('div')(({ theme }) => ({
     width: '100%',
     height: '182px',
@@ -39,7 +42,11 @@ export default function Dashboard() {
                 height: '100%',
             }}>
 
-                <Container fixed>
+                <Container fixed
+                    sx={{
+                        marginBottom: theme.spacing(6),
+                    }}
+                >
                     <StyledLinearContent>
                         <Typography variant='h1' sx={{ color: "primary.contrastText" }}>
                             Welcome Mario!
@@ -58,18 +65,32 @@ export default function Dashboard() {
                     </StyledLinearContent>
                 </Container>
 
-                <Container fixed>
+                <Container fixed
+                >
+                    <Grid container columns={2} direction='row' spacing={2}>
+                        <Grid item columns={2} direction='row' spacing={2}>
+                            <Grid container columns={2} direction='row' spacing={2}>
+                                <Grid item>
+                                    <VisitorsCard />
+                                </Grid>
+                                <Grid item>
+                                    <OrdersCard />
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid item >
+                            <Grid container columns={1} spacing={2} direction='column'>
+                                <Grid item>
 
-                    <CardLayout
-                        linkText="Do you want more visits? Contact us!"
-                        title="Visitors"
-                        Icon={AiOutlineEye}
-                        link="#"
-                    >
-                    </CardLayout>
+                                </Grid>
+                                <Grid item>
 
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
                 </Container>
-            </Box>
-        </Box>
+            </Box >
+        </Box >
     )
 }

@@ -9,8 +9,8 @@ import { ImArrowRight2 } from 'react-icons/im';
 const CardContainer = styled(Box)(({ theme }) => ({
     position: 'relative',
     padding: '24px',
-    maxWidth: '350px',
-    height: 'fit-content',
+    width: '350px',
+    minHeight: '220px',
     background: theme.palette.background.default,
     boxSizing: 'border-box',
     borderRadius: '10px',
@@ -33,7 +33,7 @@ export default function CardLayout({ children, link, linkText, width, title, Ico
             <Box sx={{
                 display: 'flex',
                 alignItems: 'center',
-                spacing: 2,
+                marginBottom: theme.spacing(3)
             }}>
                 <Icon style={{ width: 24, height: 24 }} />
                 <Typography variant='h2' sx={{
@@ -44,22 +44,29 @@ export default function CardLayout({ children, link, linkText, width, title, Ico
                 </Typography>
             </Box>
 
-            {children}
-            <LinkComponent
-                link={link}
-                linkText={linkText}
-                Icon={ImArrowRight2}
-                styles={{
-                    fontSize: theme.typography.h3.fontSize,
-                    fontWeight: 400,
-                    marginRight: theme.spacing(2),
-                    textDecoration: 'underline',
-                    fontFamily: theme.typography.fontFamily.primary,
-                    color: theme.palette.primary.main,
+            <Box sx={{
+                marginBottom: theme.spacing(3)
+            }}>
+                {children}
+            </Box>
+            <Box sx={{ position: 'absolute', bottom: '24px', left: '24px' }}>
+                <LinkComponent
+                    link={link}
+                    linkText={linkText}
+                    Icon={ImArrowRight2}
+                    styles={{
+                        fontSize: theme.typography.h3.fontSize,
+                        fontWeight: 400,
+                        marginRight: theme.spacing(2),
+                        textDecoration: 'underline',
+                        fontFamily: theme.typography.fontFamily.primary,
+                        color: theme.palette.primary.main,
 
-                }}
-                iconStyles={{ width: 20, height: 20, color: theme.palette.primary.main }}
-            />
+                    }}
+                    iconStyles={{ width: 20, height: 20, color: theme.palette.primary.main }}
+                />
+            </Box>
+
         </CardContainer>
     )
 }

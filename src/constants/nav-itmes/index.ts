@@ -10,6 +10,7 @@ import { ReactComponent as CogPlanetIcon } from '../../assets/icons/cog.svg';
 import NewIcon from '../../assets/icons/new';
 import { FiSettings } from 'react-icons/fi';
 import { FiLogOut } from 'react-icons/fi';
+import { FiList } from 'react-icons/fi';
 
 export const drawerWidth = 245;
 
@@ -41,6 +42,19 @@ export const navItemsList = [
                 children: null
             },
         ]
+    },
+    {
+        id: 'orders',
+        type: 'item',
+        link: '/orders',
+        icon: FiList,
+        label: 'Orders',
+        badge: {
+            type: 'Notification',
+            value: '14'
+
+        },
+        children: null
     },
     {
         id: 'customers',
