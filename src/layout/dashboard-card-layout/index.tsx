@@ -9,7 +9,7 @@ import { ImArrowRight2 } from 'react-icons/im';
 const CardContainer = styled(Box)(({ theme }) => ({
     position: 'relative',
     padding: '24px',
-    width: '350px',
+    width: '340px',
     minHeight: '220px',
     background: theme.palette.background.default,
     boxSizing: 'border-box',
@@ -24,12 +24,16 @@ interface Props {
     width?: number
     title?: string
     Icon: React.ElementType
+    style?: React.CSSProperties
+    linkColor?: string
 }
-export default function CardLayout({ children, link, linkText, width, title, Icon }: Props) {
+export default function CardLayout({ children, link, linkText, title, Icon, style = {}, linkColor }: Props) {
     const theme = useTheme();
-
+    console.log(linkColor)
     return (
-        <CardContainer>
+        <CardContainer
+            sx={style}
+        >
             <Box sx={{
                 display: 'flex',
                 alignItems: 'center',
@@ -60,10 +64,10 @@ export default function CardLayout({ children, link, linkText, width, title, Ico
                         marginRight: theme.spacing(2),
                         textDecoration: 'underline',
                         fontFamily: theme.typography.fontFamily.primary,
-                        color: theme.palette.primary.main,
+                        color: linkColor ? linkColor : theme.palette.primary.main,
 
                     }}
-                    iconStyles={{ width: 20, height: 20, color: theme.palette.primary.main }}
+                    iconStyles={{ width: 20, height: 20, color: linkColor ? linkColor : theme.palette.primary.main }}
                 />
             </Box>
 

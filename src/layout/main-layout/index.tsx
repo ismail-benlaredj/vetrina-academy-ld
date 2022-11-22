@@ -15,12 +15,14 @@ export default function MainLayout() {
 
 
     const Main = styled('main')(({ theme }) => ({
+        position: 'relative',
         marginTop: theme.spacing(8),
         marginLeft: 0,
         width: `calc(100% - ${theme.spacing(7)})`,
         backgroundColor: theme.palette.background.paper,
-        minHeight: 'calc(100vh - 65px)',
-        boxSizing: 'border-box',
+        flexGrow: 1,
+        flexDirection: 'column',
+        display: 'flex',
     }));
     return (
         <Box sx={{ display: 'flex', color: theme.palette.text.secondary }}>

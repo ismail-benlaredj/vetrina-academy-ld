@@ -6,10 +6,12 @@ import VisitorsCard from './component/VisitorsCard';
 import OrdersCard from './component/OrdersCard';
 import { styled, useTheme } from '@mui/material/styles';
 import { FiExternalLink } from 'react-icons/fi';
-import { AiOutlineEye } from 'react-icons/ai';
-import CardLayout from 'layout/dashboard-card-layout';
 import LinkComponent from 'pages/shared/LinkComponent';
-import CardMenu from './component/CardMenu';
+import ConfigCard from './component/ConfigCard';
+import TrustCard from './component/TrustCard';
+import InviteCard from './component/InviteCard';
+import SupportCard from './component/SupportCard';
+import AppsCard from './component/AppsCard';
 const LinearBox = styled('div')(({ theme }) => ({
     width: '100%',
     height: '182px',
@@ -29,15 +31,18 @@ const StyledLinearContent = styled(Box)(({ theme }) => ({
     marginTop: theme.spacing(5),
 }));
 
+
 export default function Dashboard() {
     const theme = useTheme();
 
     return (
-        <Box sx={{ position: 'relative', height: 'fit-content' }}>
+        <Box className='test' sx={{
+            position: 'relative',
+
+        }}>
             <LinearBox />
 
             <Box sx={{
-                position: 'absolute',
                 width: '100%',
                 height: '100%',
             }}>
@@ -67,8 +72,8 @@ export default function Dashboard() {
 
                 <Container fixed
                 >
-                    <Grid container columns={2} direction='row' spacing={2}>
-                        <Grid item columns={2} direction='row' spacing={2}>
+                    <Grid container columns={2} direction='row' spacing={1}>
+                        <Grid item sx={{ width: '67%' }}>
                             <Grid container columns={2} direction='row' spacing={2}>
                                 <Grid item>
                                     <VisitorsCard />
@@ -76,20 +81,34 @@ export default function Dashboard() {
                                 <Grid item>
                                     <OrdersCard />
                                 </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item >
-                            <Grid container columns={1} spacing={2} direction='column'>
                                 <Grid item>
-
+                                    <AppsCard />
                                 </Grid>
                                 <Grid item>
+                                    <OrdersCard />
+                                </Grid>
 
+                            </Grid>
+                        </Grid>
+                        <Grid item>
+                            <Grid container columns={1} spacing={2} direction="column">
+                                <Grid item>
+                                    <ConfigCard />
+                                </Grid>
+                                <Grid item>
+                                    <TrustCard />
+                                </Grid>
+                                <Grid item>
+                                    <InviteCard />
+                                </Grid>
+                                <Grid item>
+                                    <SupportCard />
                                 </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
-                </Container>
+                    </Grid >
+
+                </Container >
             </Box >
         </Box >
     )
