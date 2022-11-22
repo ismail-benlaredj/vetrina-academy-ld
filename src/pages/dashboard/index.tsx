@@ -12,6 +12,8 @@ import TrustCard from './component/TrustCard';
 import InviteCard from './component/InviteCard';
 import SupportCard from './component/SupportCard';
 import AppsCard from './component/AppsCard';
+import ExtensionsCard from './component/ExtensionsCard';
+import BlogCard from './component/BlogCard';
 const LinearBox = styled('div')(({ theme }) => ({
     width: '100%',
     height: '182px',
@@ -85,12 +87,15 @@ export default function Dashboard() {
                                     <AppsCard />
                                 </Grid>
                                 <Grid item>
-                                    <OrdersCard />
+                                    <ExtensionsCard />
+                                </Grid>
+                                <Grid item sx={{ width: '99.5%' }}>
+                                    <BlogCard />
                                 </Grid>
 
                             </Grid>
                         </Grid>
-                        <Grid item>
+                        <Grid item sx={{ width: '33%' }}>
                             <Grid container columns={1} spacing={2} direction="column">
                                 <Grid item>
                                     <ConfigCard />

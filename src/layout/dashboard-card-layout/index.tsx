@@ -29,7 +29,6 @@ interface Props {
 }
 export default function CardLayout({ children, link, linkText, title, Icon, style = {}, linkColor }: Props) {
     const theme = useTheme();
-    console.log(linkColor)
     return (
         <CardContainer
             sx={style}

@@ -6,7 +6,7 @@ interface Props {
     linkText: string
     Icon: React.ElementType
     styles?: any
-    iconStyles?: { width: number, height: number, color: string }
+    iconStyles?: { width?: number, height?: number, color: string }
 }
 export default function LinkComponent({ link, Icon, styles, linkText, iconStyles = { width: 24, height: 24, color: 'inherit' } }: Props) {
     return (
