@@ -14,6 +14,10 @@ import SupportCard from './component/SupportCard';
 import AppsCard from './component/AppsCard';
 import ExtensionsCard from './component/ExtensionsCard';
 import BlogCard from './component/BlogCard';
+
+import { useOutletContext } from "react-router-dom";
+
+
 const LinearBox = styled('div')(({ theme }) => ({
     width: '100%',
     height: '182px',
@@ -36,7 +40,10 @@ const StyledLinearContent = styled(Box)(({ theme }) => ({
 
 export default function Dashboard() {
     const theme = useTheme();
+    const open = useOutletContext();
 
+    const cardListFirstCol = [<VisitorsCard />, <OrdersCard />, <AppsCard />, <ExtensionsCard />]
+    const cardListSecondCol = [<ConfigCard />, <TrustCard />, <InviteCard />, <SupportCard />]
     return (
         <Box className='test' sx={{
             position: 'relative',
@@ -48,7 +55,6 @@ export default function Dashboard() {
                 width: '100%',
                 height: '100%',
             }}>
-
                 <Container fixed
                     sx={{
                         marginBottom: theme.spacing(6),
@@ -73,42 +79,33 @@ export default function Dashboard() {
                 </Container>
 
                 <Container fixed
+                    sx={{ flexGrow: 1 }}
                 >
-                    <Grid container columns={2} direction='row' spacing={1}>
-                        <Grid item sx={{ width: '67%' }}>
-                            <Grid container columns={2} direction='row' spacing={2}>
-                                <Grid item>
-                                    <VisitorsCard />
-                                </Grid>
-                                <Grid item>
-                                    <OrdersCard />
-                                </Grid>
-                                <Grid item>
-                                    <AppsCard />
-                                </Grid>
-                                <Grid item>
-                                    <ExtensionsCard />
-                                </Grid>
-                                <Grid item sx={{ width: '99.5%' }}>
+                    <Grid container direction='row' spacing={1} sx={{ justifyContent: 'flex-start' }}>
+                        <Grid item md={open ? 8 : 7.35} >
+                            <Grid container spacing={1.5} >
+                                {
+                                    cardListFirstCol.map((card, index) => (
+                                        <Grid item key={index}>
+                                            {card}
+                                        </Grid>
+                                    ))
+                                }
+                                <Grid item md={11.95}>
                                     <BlogCard />
                                 </Grid>
 
                             </Grid>
                         </Grid>
-                        <Grid item sx={{ width: '33%' }}>
+                        <Grid item md={4}>
                             <Grid container columns={1} spacing={2} direction="column">
-                                <Grid item>
-                                    <ConfigCard />
-                                </Grid>
-                                <Grid item>
-                                    <TrustCard />
-                                </Grid>
-                                <Grid item>
-                                    <InviteCard />
-                                </Grid>
-                                <Grid item>
-                                    <SupportCard />
-                                </Grid>
+                                {
+                                    cardListSecondCol.map((card, index) => (
+                                        <Grid item key={index}>
+                                            {card}
+                                        </Grid>
+                                    ))
+                                }
                             </Grid>
                         </Grid>
                     </Grid >

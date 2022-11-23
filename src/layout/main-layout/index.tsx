@@ -29,7 +29,7 @@ export default function MainLayout() {
             <Header open={open} />
             <Sidebar open={open} handleDrawerState={handleDrawerState} />
             <Main>
-                <Outlet />
+                <Outlet context={open} />
             </Main>
         </Box>
     )

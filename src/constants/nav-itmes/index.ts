@@ -11,6 +11,9 @@ import NewIcon from '../../assets/icons/new';
 import { FiSettings } from 'react-icons/fi';
 import { FiLogOut } from 'react-icons/fi';
 import { FiList } from 'react-icons/fi';
+import { FiHelpCircle } from 'react-icons/fi';
+import { FiShare2 } from 'react-icons/fi';
+import { AiOutlineEye } from 'react-icons/ai';
 
 export const drawerWidth = 245;
 
@@ -22,7 +25,8 @@ export const navItemsList = [
         icon: BiHomeAlt,
         label: 'Dashboard',
         badge: null,
-        children: null
+        children: null,
+
     },
     {
         id: 'catalogue',
@@ -50,7 +54,7 @@ export const navItemsList = [
         icon: FiList,
         label: 'Orders',
         badge: {
-            type: 'Notification',
+            type: 'notification',
             value: '14'
 
         },
@@ -192,10 +196,7 @@ export const navItemsList = [
         link: '/subscription',
         icon: FiCreditCard,
         label: 'Subscription',
-        badge: {
-            type: 'label-new',
-            value: 'New'
-        },
+        badge: null,
         children: null
     },
     {
@@ -237,4 +238,32 @@ export const navItemsList = [
 ]
 
 
+export const navItemSecondList = [
+    {
+        id: 'Customer Support',
+        type: 'item',
+        link: '/Customer-Support',
+        icon: FiHelpCircle,
+        label: 'Customer Support',
+        badge: null,
+        children: null
+    },
+    {
+        id: 'Shareyourshop',
+        type: 'item',
+        link: '/Share-your-shop',
+        icon: FiShare2,
+        label: 'Share your shop',
+        badge: null,
+        children: null
+    }, {
+        id: 'Viewyourshop',
+        type: 'item',
+        link: '/View-your-shop',
+        icon: AiOutlineEye,
+        label: 'View your shop',
+        badge: null,
+        children: null
+    },
 
+]

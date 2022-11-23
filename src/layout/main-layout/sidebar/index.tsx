@@ -8,8 +8,10 @@ import Divider from '@mui/material/Divider';
 import Logo from '../../../assets/icons/Logo';
 import NavItem from './nav-item';
 import NavCollapse from './group-nav-item';
-import { navItemsList } from '../../../constants/nav-itmes';
+import { navItemsList, navItemSecondList } from '../../../constants/nav-itmes';
 import { drawerWidth } from '../../../constants/nav-itmes';
+import SelectMenu from 'pages/shared/SelectMenu';
+import { Typography } from '@mui/material';
 
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -93,8 +95,28 @@ export default function Sidebar({ open, handleDrawerState }: Props) {
                         (<NavItem item={item} open={open} key={item.id} />)
 
                 ))}
+
+                <Divider sx={{ my: theme.spacing(2) }} />
+                {navItemSecondList.map((item: any) => (
+                    (item.type === 'group')
+                        ?
+                        (<NavCollapse groupItem={item} open={open} key={item.id} />)
+                        :
+                        (<NavItem item={item} open={open} key={item.id} />)
+
+                ))}
             </List>
-            <Divider />
+            <Box sx={{ px: '20px', pb: theme.spacing(8), mt: theme.spacing(5), display: open ? 'block' : 'none' }}>
+                <Typography
+                    color={theme.palette.text.primary}
+                    sx={{
+                        fontSize: '15px',
+                        fontWeight: '500',
+                        mb: theme.spacing(2),
+                    }}
+                >Select your shop</Typography>
+                <SelectMenu />
+            </Box>
         </StyledDrawer>
 
     );

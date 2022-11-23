@@ -3,11 +3,13 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Typography from '@mui/material/Typography';
 import { FiChevronDown } from 'react-icons/fi'
+import Box from '@mui/material/Box';
 import { useState } from 'react';
+import { useTheme } from '@mui/material/styles';
 
 
-
-export default function CardMenu() {
+export default function SelectMenu() {
+    const theme = useTheme();
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
     const [selected, setSelected] = useState('Today')
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -22,19 +24,32 @@ export default function CardMenu() {
         setAnchorEl(null);
     }
     return (
-        <>
+        <Box
+            sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                border: '1px solid #E5E5E5',
+                borderRadius: '5px',
+                height: '50px',
+                maxWidth: '215px',
+                boxSizing: 'border-box',
+            }}
+        >
             <IconButton
                 disableRipple
                 onClick={handleClick}
                 sx={{
+                    width: '100%',
                     display: 'flex',
                     alignItems: 'center',
+                    justifyContent: 'space-between',
+                    px: theme.spacing(2),
                 }}
             >
-                <Typography sx={{ marginRight: "11px" }}>
+                <Typography sx={{ marginRight: "14px", color: theme.palette.text.secondary }}>
                     {selected}
                 </Typography>
-                <FiChevronDown style={{ width: "16px", height: "16px" }} />
+                <FiChevronDown style={{ width: "20px", height: "20px", color: theme.palette.text.secondary }} />
             </IconButton>
             <Menu
                 id="menu-card"
@@ -52,31 +67,18 @@ export default function CardMenu() {
                     vertical: 'top',
                     horizontal: 'right'
                 }}
-
             >
                 <MenuItem
                     onClick={() => handleSelect('Today')}
                     sx={{ color: selected === 'Today' ? 'primary.main' : 'inherit' }}
                 >
-                    Today
+                    Fenoh store
                 </MenuItem>
-                <MenuItem
-                    onClick={() => handleSelect('This Week')}
-                    sx={{ color: selected === 'This Week' ? 'primary.main' : 'inherit' }}
-                >
-                    This Week
-                </MenuItem>
-                <MenuItem onClick={() => handleSelect('This Month')}
-                    sx={{ color: selected === 'This Month' ? 'primary.main' : 'inherit' }}
-                >
-                    This Month
-                </MenuItem>
-
             </Menu>
 
 
 
 
-        </>
+        </Box>
     )
 }
