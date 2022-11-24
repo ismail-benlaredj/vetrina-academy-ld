@@ -1,12 +1,17 @@
+import { lazy } from 'react';
 import { RouteObject, useRoutes } from 'react-router-dom';
-import Dashboard from "../pages/dashboard"
-import Orders from "../pages/orders"
-import MainLayout from "../layout/main-layout"
+
+import SuspenseComponent from "../global-ui/SuspenseComponent"
 import CustomPage from "../pages/shared/CustomPage"
 
 import { navItemsList, navItemSecondList } from "../constants/nav-itmes"
 
+const Dashboard = SuspenseComponent(lazy(() => import('../pages/dashboard')));
+const MainLayout = SuspenseComponent(lazy(() => import('../layout/main-layout')));
+
+
 export default function AppRoutes() {
+
     const generateRoutes = navItemsList.map((item) => {
         let children: any = []
         if (item.children) {

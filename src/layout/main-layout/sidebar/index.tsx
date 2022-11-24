@@ -52,9 +52,10 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 const StyledDrawer = styled(Drawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         width: drawerWidth,
-        height: 'fit-content',
+        height: '100%',
         flexShrink: 0,
         whiteSpace: 'nowrap',
+        backgroundColor: theme.palette.common.white,
         boxSizing: 'border-box',
         ...(open && {
             ...openedMixin(theme),
@@ -77,7 +78,7 @@ export default function Sidebar({ open, handleDrawerState }: Props) {
 
 
     return (
-        <StyledDrawer variant="permanent" open={open}>
+        <StyledDrawer variant="permanent" open={open} className='test'>
             <DrawerHeader>
                 <Box sx={{ width: "93.25px", display: open ? 'block' : 'none' }}>
                     <Logo />
@@ -88,15 +89,19 @@ export default function Sidebar({ open, handleDrawerState }: Props) {
                 </IconButton>
             </DrawerHeader>
 
-            <List sx={{ backgroundColor: theme.palette.common.white, height: '100%' }}>
+            <List sx={{
+                backgroundColor: theme.palette.common.white,
+                height: 'fit-content',
+                pb: theme.spacing(5),
+            }}>
                 {navItemsList.map((item: any) => (
                     (item.type === 'group')
                         ?
                         (<NavCollapse groupItem={item} open={open} key={item.id} />)
                         :
                         (
-                            <Link to={item.link}>
-                                <NavItem item={item} open={open} key={item.id} />
+                            <Link key={item.id} to={item.link} >
+                                <NavItem item={item} open={open} link={`/${item.link}`} />
                             </Link>
                         )
 
@@ -112,13 +117,19 @@ export default function Sidebar({ open, handleDrawerState }: Props) {
 
                 ))}
             </List>
-            <Box sx={{ px: '20px', pb: theme.spacing(8), mt: theme.spacing(5), display: open ? 'block' : 'none' }}>
+            <Box sx={{
+                px: '20px', pb: theme.spacing(8),
+                backgroundColor: theme.palette.common.white,
+                display: open ? 'block' : 'none'
+
+            }}>
                 <Typography
                     color={theme.palette.text.primary}
                     sx={{
                         fontSize: '15px',
                         fontWeight: '500',
                         mb: theme.spacing(2),
+                        display: open ? 'block' : 'none'
                     }}
                 >Select your shop</Typography>
                 <SelectMenu />

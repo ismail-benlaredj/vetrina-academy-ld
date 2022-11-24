@@ -85,8 +85,8 @@ function BlogPost({ imgLink, title, meta, lable, postLink }: BlogCardProps) {
 
 export default function BlogCard() {
     const theme = useTheme();
-    // const [data, error, loading] = useFetch('https://api.vetrinalive.com/api/blog-posts');
-    const [data, error, loading] = useFetch('https://api.vetrinalccive.com/api/blog-posts');
+    const [data, error, loading] = useFetch('https://api.vetrinalive.com/api/blog-posts');
+
     return (
         <CardContainer>
             <CardHeader>

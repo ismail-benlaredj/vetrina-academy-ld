@@ -6,7 +6,7 @@ import { useTheme } from '@mui/material/styles';
 import { Typography, styled } from '@mui/material';
 import Box from '@mui/material/Box';
 
-
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -19,6 +19,7 @@ const NewLableBadge = styled(Typography)(({ theme }) => ({
     fontSize: '14px',
     fontWeight: '700',
     margin: `0 ${theme.spacing(2)} `,
+    zIndex: 1,
 }));
 const NotifBadge = styled(Box)(({ theme }) => ({
     display: 'flex',
@@ -32,6 +33,7 @@ const NotifBadge = styled(Box)(({ theme }) => ({
     fontSize: '14px',
     fontWeight: '400',
     margin: ` 0 ${theme.spacing(2)} `,
+    zIndex: 1,
 }));
 
 interface baseProps {
@@ -66,13 +68,32 @@ interface NavItemProps {
     open: boolean,
     children?: JSX.Element | JSX.Element[],
     handleCollapse?: () => void,
+    link?: string,
 
 }
-export default function NavItem({ item, open, children, handleCollapse }: NavItemProps) {
+export default function NavItem({ item, open, children, handleCollapse, link }: NavItemProps) {
     const theme = useTheme();
+    let { pathname } = useLocation();
+    console.log(pathname)
+    const activeItemStyle = (link === pathname) ? ({
+        position: 'relative',
+        '&::before': {
+            content: '""',
+            position: 'absolute',
+            width: '95%',
+            height: '100%',
+            backgroundColor: '#F7F7F7',
+            borderRadius: '4px',
+            zIndex: 0,
+            borderLeft: `3px solid ${theme.palette.primary.main}`,
+            left: '2%',
+        }
+    }) : ({})
     return (
 
-        <ListItem key={item.id} disablePadding onClick={() => handleCollapse && handleCollapse()} >
+        <ListItem key={item.id} disablePadding onClick={() => handleCollapse && handleCollapse()}
+            sx={activeItemStyle}
+        >
             <ListItemButton
                 sx={{
                     maxHeight: 36,
@@ -111,7 +132,7 @@ export default function NavItem({ item, open, children, handleCollapse }: NavIte
             </ListItemButton>
 
             {item.badge && open && <Badges badge={item.badge} />}
-        </ListItem>
+        </ListItem >
 
     )
 }

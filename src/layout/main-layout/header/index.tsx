@@ -51,8 +51,6 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 }));
 export default function Header({ open }: AppBarProps) {
     const theme = useTheme();
-
-    console.log(theme.spacing(7))
     return (
 
         <AppBar position="fixed" open={open}>
