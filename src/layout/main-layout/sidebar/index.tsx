@@ -12,6 +12,8 @@ import { navItemsList, navItemSecondList } from '../../../constants/nav-itmes';
 import { drawerWidth } from '../../../constants/nav-itmes';
 import SelectMenu from 'pages/shared/SelectMenu';
 import { Typography } from '@mui/material';
+import { Link } from "react-router-dom";
+
 
 
 const openedMixin = (theme: Theme): CSSObject => ({
@@ -92,7 +94,11 @@ export default function Sidebar({ open, handleDrawerState }: Props) {
                         ?
                         (<NavCollapse groupItem={item} open={open} key={item.id} />)
                         :
-                        (<NavItem item={item} open={open} key={item.id} />)
+                        (
+                            <Link to={item.link}>
+                                <NavItem item={item} open={open} key={item.id} />
+                            </Link>
+                        )
 
                 ))}
 

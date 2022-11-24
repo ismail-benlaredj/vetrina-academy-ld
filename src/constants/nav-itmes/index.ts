@@ -21,7 +21,7 @@ export const navItemsList = [
     {
         id: 'Dashboard',
         type: 'item',
-        link: '/dashboard',
+        link: 'dashboard',
         icon: BiHomeAlt,
         label: 'Dashboard',
         badge: null,
@@ -31,7 +31,7 @@ export const navItemsList = [
     {
         id: 'catalogue',
         type: 'group',
-        link: '/catalogue',
+        link: 'catalogue',
         icon: FiShoppingCart,
         label: 'Catalogue',
         badge: null,
@@ -39,7 +39,7 @@ export const navItemsList = [
             {
                 id: 'products',
                 type: 'item',
-                link: '/catalogue/products',
+                link: 'products',
                 icon: null,
                 label: 'Products',
                 badge: null,
@@ -50,7 +50,7 @@ export const navItemsList = [
     {
         id: 'orders',
         type: 'item',
-        link: '/orders',
+        link: 'orders',
         icon: FiList,
         label: 'Orders',
         badge: {
@@ -63,7 +63,7 @@ export const navItemsList = [
     {
         id: 'customers',
         type: 'item',
-        link: '/customers',
+        link: 'customers',
         icon: FiUser,
         label: 'Customers',
         badge: null,
@@ -72,7 +72,7 @@ export const navItemsList = [
     {
         id: 'marketing',
         type: 'group',
-        link: '/marketing',
+        link: 'marketing',
         icon: FiTarget,
         label: 'Marketing',
         badge: null,
@@ -80,7 +80,7 @@ export const navItemsList = [
             {
                 id: 'discount-codes',
                 type: 'item',
-                link: '/marketing/discount-codes',
+                link: 'discount-codes',
                 icon: null,
                 label: 'Discount codes',
                 badge: null,
@@ -89,7 +89,7 @@ export const navItemsList = [
             {
                 id: 'exit-intent',
                 type: 'item',
-                link: '/marketing/exit-intent',
+                link: 'exit-intent',
                 icon: null,
                 label: 'Exit intent',
                 badge: null,
@@ -98,7 +98,7 @@ export const navItemsList = [
             {
                 id: 'checkout',
                 type: 'item',
-                link: '/markiting/checkout',
+                link: 'checkout',
                 icon: null,
                 label: 'Checkout Features',
                 badge: null,
@@ -107,7 +107,7 @@ export const navItemsList = [
             {
                 id: 'post-purchase',
                 type: 'item',
-                link: '/post-purchase',
+                link: 'post-purchase',
                 icon: null,
                 label: 'Post-purchase conversion',
                 badge: null,
@@ -116,7 +116,7 @@ export const navItemsList = [
             {
                 id: 'cart-abandonment',
                 type: 'item',
-                link: '/marketing/cart-abandonment',
+                link: 'cart-abandonment',
                 icon: null,
                 label: 'Cart abandonment',
                 badge: null,
@@ -125,7 +125,7 @@ export const navItemsList = [
             {
                 id: 'timer-checkout',
                 type: 'item',
-                link: '/marketing/timer-checkout',
+                link: 'timer-checkout',
                 icon: null,
                 label: 'Timer checkout',
                 badge: null,
@@ -134,7 +134,7 @@ export const navItemsList = [
             {
                 id: 'sell-on-social',
                 type: 'item',
-                link: '/marketing/sell-on-social',
+                link: 'sell-on-social',
                 icon: null,
                 label: 'Sell on Social',
                 badge: null,
@@ -143,7 +143,7 @@ export const navItemsList = [
             {
                 id: 'special-offer',
                 type: 'item',
-                link: '/marketing/special-offer',
+                link: 'special-offer',
                 icon: null,
                 label: 'Special Offer',
                 badge: null,
@@ -152,7 +152,7 @@ export const navItemsList = [
             {
                 id: 'seasonal-offer',
                 type: 'item',
-                link: '/marketing/seasional-offer',
+                link: 'seasional-offer',
                 icon: null,
                 label: 'Seasonal Offer',
                 badge: null,
@@ -163,7 +163,7 @@ export const navItemsList = [
     {
         id: 'delivery',
         type: 'item',
-        link: '/delivery-options',
+        link: 'delivery-options',
         icon: BsTruck,
         label: 'Delivery options',
         badge: null,
@@ -172,7 +172,7 @@ export const navItemsList = [
     {
         id: 'payment-options',
         type: 'item',
-        link: '/payment-options',
+        link: 'payment-options',
         icon: FiDollarSign,
         label: 'Payment options',
         badge: null,
@@ -181,7 +181,7 @@ export const navItemsList = [
     {
         id: 'store-design',
         type: 'item',
-        link: '/store-design',
+        link: 'store-design',
         icon: BrushIcon,
         label: 'Store design',
         badge: {
@@ -193,7 +193,7 @@ export const navItemsList = [
     {
         id: 'subscription',
         type: 'item',
-        link: '/subscription',
+        link: 'subscription',
         icon: FiCreditCard,
         label: 'Subscription',
         badge: null,
@@ -202,7 +202,7 @@ export const navItemsList = [
     {
         id: 'integrations',
         type: 'item',
-        link: '/integrations',
+        link: 'integrations',
         icon: CogPlanetIcon,
         label: 'Integrations',
         badge: null,
@@ -211,7 +211,7 @@ export const navItemsList = [
     {
         id: 'extensions',
         type: 'item',
-        link: '/extensions',
+        link: 'extensions',
         icon: NewIcon,
         label: 'Extensions',
         badge: null,
@@ -220,7 +220,7 @@ export const navItemsList = [
     {
         id: 'settings',
         type: 'item',
-        link: '/settings',
+        link: 'settings',
         icon: FiSettings,
         label: 'Settings',
         badge: null,
@@ -229,7 +229,7 @@ export const navItemsList = [
     {
         id: 'log-out',
         type: 'item',
-        link: '/log-out',
+        link: 'log-out',
         icon: FiLogOut,
         label: 'Log out',
         badge: null,

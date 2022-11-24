@@ -7,13 +7,6 @@ import { Typography, styled } from '@mui/material';
 import Box from '@mui/material/Box';
 
 
-interface NavItemProps {
-    item: any,
-    open: boolean,
-    children?: JSX.Element | JSX.Element[],
-    handleCollapse?: () => void,
-
-}
 
 
 
@@ -68,9 +61,17 @@ function Badges({ badge }: baseProps): JSX.Element {
     }
 }
 
+interface NavItemProps {
+    item: any,
+    open: boolean,
+    children?: JSX.Element | JSX.Element[],
+    handleCollapse?: () => void,
+
+}
 export default function NavItem({ item, open, children, handleCollapse }: NavItemProps) {
     const theme = useTheme();
     return (
+
         <ListItem key={item.id} disablePadding onClick={() => handleCollapse && handleCollapse()} >
             <ListItemButton
                 sx={{
@@ -111,5 +112,6 @@ export default function NavItem({ item, open, children, handleCollapse }: NavIte
 
             {item.badge && open && <Badges badge={item.badge} />}
         </ListItem>
+
     )
 }

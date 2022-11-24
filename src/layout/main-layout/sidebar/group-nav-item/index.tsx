@@ -1,5 +1,5 @@
-
 import { useState } from 'react';
+import { Link } from "react-router-dom";
 
 import { useTheme } from '@mui/material/styles';
 import { Collapse, List } from '@mui/material';
@@ -23,12 +23,13 @@ const NavCollapse = ({ groupItem, open }: GroupNavItemProps) => {
 
 
     const subItem = groupItem.children.map((item: any) => (
-        <NavItem key={item.id} item={item} open={true} />
+        <Link to={`${groupItem.link}/${item.link}`} key={item.id}>
+            <NavItem item={item} open={true} />
+        </Link>
     ));
 
     return (
         <>
-
             <NavItem item={groupItem} open={open} handleCollapse={handleCollapse}>
                 {open ? (
                     <MdOutlineExpandMore style={{ marginTop: 'auto', marginBottom: 'auto', width: '20px', height: ' 20px' }} />
