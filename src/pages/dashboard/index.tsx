@@ -6,7 +6,7 @@ import VisitorsCard from './component/VisitorsCard';
 import OrdersCard from './component/OrdersCard';
 import { styled, useTheme } from '@mui/material/styles';
 import { FiExternalLink } from 'react-icons/fi';
-import LinkComponent from 'pages/shared/LinkComponent';
+import LinkComponent from 'pages/components/LinkComponent';
 import ConfigCard from './component/ConfigCard';
 import TrustCard from './component/TrustCard';
 import InviteCard from './component/InviteCard';
@@ -109,7 +109,6 @@ export default function Dashboard() {
                             </Grid>
                         </Grid>
                     </Grid >
-
                 </Container >
             </Box >
         </Box >

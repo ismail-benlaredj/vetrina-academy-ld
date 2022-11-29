@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import { styled, useTheme } from '@mui/material/styles';
 import { FiFileText } from 'react-icons/fi';
 import { FiExternalLink } from 'react-icons/fi';
-import LinkComponent from 'pages/shared/LinkComponent';
+import LinkComponent from 'pages/components/LinkComponent';
 
 import { useFetch } from 'hooks/useFetch';
 

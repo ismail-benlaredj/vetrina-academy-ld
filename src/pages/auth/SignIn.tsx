@@ -2,7 +2,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
+import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -10,10 +10,10 @@ import Input from '@mui/material/Input';
 import { styled, useTheme } from '@mui/material/styles';
 
 import Logo from 'assets/icons/Logo';
-
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import { StyledInput } from 'pages/components/StyledInput';
 
+import StyledSupportBtn from 'pages/components/StyledSupportBtn';
 
 function Copyright(props: any) {
     return (
@@ -27,6 +27,8 @@ function Copyright(props: any) {
         </Typography>
     );
 }
+
+
 
 
 
@@ -75,6 +77,7 @@ export default function SignIn() {
                     justifyContent: 'center',
                     alignItems: 'center',
                     background: '#fff',
+                    padding: '40px',
 
                 }}>
                     <Box
@@ -84,51 +87,38 @@ export default function SignIn() {
                             flexDirection: 'column',
                             alignItems: 'center',
                             justifyContent: 'center',
-
                             width: '60%',
                         }}
                     >
 
-                        <Typography variant="h5" color='primary' >
+                        <Typography color='primary' sx={{ fontWeight: 400, fontSize: "1rem", }} >
                             Seller area
                         </Typography>
-                        <Typography variant="h2" color='text.primary' sx={{ my: '24px' }}>
+                        <Typography variant="h2" color='text.primary' sx={{ my: '24px', fontWeight: 'bold', fontSize: '24px' }}>
                             Shop administration
                         </Typography>
-                        <Typography variant="body1" color='text.disabled' sx={{ mb: "48px" }}>
+                        <Typography color='text.disabled' sx={{ mb: "48px", fontWeight: 300, fontSize: "15px" }}>
                             Enter your email and password to log in, thank you!
                         </Typography>
 
                         <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1, width: '380px' }}>
-                            <TextField
-                                hiddenLabel
-                                margin="normal"
-                                required
-                                fullWidth
-                                id="email"
-                                label="Email Address"
-                                name="email"
-                                autoComplete="email"
-                                autoFocus
-                                InputProps={{ disableUnderline: true }}
 
-                            />
-                            <TextField
-                                margin="normal"
+                            <StyledInput
+                                type="email"
+                                placeholder="Insert your email"
                                 required
-                                fullWidth
-                                name="password"
-                                label="Password"
+                            />
+                            <StyledInput
                                 type="password"
-                                id="password"
-                                autoComplete="current-password"
+                                placeholder="Password"
+                                required
                             />
 
                             <Button
                                 type="submit"
                                 fullWidth
                                 variant="contained"
-                                sx={{ mt: 3, mb: 2, width: "100%" }}
+                                sx={{ mb: 2, width: "100%" }}
                             >
                                 Sign In
                             </Button>
@@ -141,32 +131,39 @@ export default function SignIn() {
                                 }}
                             >
 
-                                <Link href="#" variant="h3" color="text.primary"
+                                <Link href="#" color="text.primary"
                                     sx={{
                                         textDecoration: 'none',
-                                        mb: '24px',
+                                        my: '24px',
+                                        fontSize: '16px',
                                     }}
                                 >
                                     Forgot password?
                                 </Link>
 
-                                <Typography variant="h3" color="text.primary">
+                                <Typography color="text.primary"
+                                    sx={{
+                                        textDecoration: 'none',
+                                        fontSize: '16px',
+                                    }}
+                                >
                                     Don't have an account?
-                                    <Link href="#" variant="h3" color="primary"
+                                    <Link href="#" color="primary"
                                         sx={{
                                             textDecoration: 'none',
+                                            fontSize: '16px',
                                         }}
                                     >
-                                        {"  Sign Up"}
+                                        {"  Signup Now"}
                                     </Link>
                                 </Typography>
-
-
                             </Box>
                         </Box>
                     </Box>
-                    <Copyright sx={{ mt: 8, mb: 4 }} />
                 </Box>
+                <StyledSupportBtn />
+
+                <Copyright sx={{ mt: 8, mb: 4 }} />
             </Box>
         </>
     );

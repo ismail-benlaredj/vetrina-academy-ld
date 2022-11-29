@@ -2,7 +2,7 @@ import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-import LinkComponent from 'pages/shared/LinkComponent';
+import LinkComponent from 'pages/components/LinkComponent';
 
 import { ImArrowRight2 } from 'react-icons/im';
 

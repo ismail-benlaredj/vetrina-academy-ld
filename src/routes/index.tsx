@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import { RouteObject, useRoutes } from 'react-router-dom';
 
 import SuspenseComponent from "../global-ui/SuspenseComponent"
-import CustomPage from "../pages/shared/CustomPage"
+import CustomPage from "../pages/components/CustomPage"
 
 import { navItemsList, navItemSecondList } from "../constants/nav-itmes"
 

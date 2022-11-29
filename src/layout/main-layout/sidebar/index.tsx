@@ -10,7 +10,7 @@ import NavItem from './nav-item';
 import NavCollapse from './group-nav-item';
 import { navItemsList, navItemSecondList } from '../../../constants/nav-itmes';
 import { drawerWidth } from '../../../constants/nav-itmes';
-import SelectMenu from 'pages/shared/SelectMenu';
+import SelectMenu from 'pages/components/SelectMenu';
 import { Typography } from '@mui/material';
 import { Link } from "react-router-dom";
 
