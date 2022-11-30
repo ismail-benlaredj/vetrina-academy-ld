@@ -22,7 +22,6 @@ const StyledBtn = styled(IconButton)(({ theme }) => ({
 }))
 
 export default function StyledSupportBtn() {
-    const theme = useTheme();
     return (
         <StyledBtn>
             <SupportIcon />
