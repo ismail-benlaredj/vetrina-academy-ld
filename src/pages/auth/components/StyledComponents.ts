@@ -50,7 +50,7 @@ export const SignUpContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const SignUpBox = styled(Box)(({ theme }) => ({
-    my: "48px",
+    margin: "48px 0",
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -65,5 +65,5 @@ export const SignUpFlexBox = styled(Box)(({ theme }) => ({
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
-    pb: '64px',
+    paddingBottom: '64px',
 }))

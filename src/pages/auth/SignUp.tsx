@@ -1,11 +1,6 @@
-import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
 import Logo from 'assets/icons/Logo';
-import { styled, useTheme } from '@mui/material/styles';
 import StyledSupportBtn from 'pages/components/StyledSupportBtn';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import { StyledInput } from 'pages/components/StyledInput';
 import { SignUpContainer, SignUpBox, SignUpFlexBox } from './components/StyledComponents';
 import SignUpHeader from './components/SignUpHeader';
 import SignUpForm from './components/SignUpForm';
@@ -13,7 +8,6 @@ import SignUpForm from './components/SignUpForm';
 
 
 export default function SignUp() {
-    const theme = useTheme();
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -33,7 +27,6 @@ export default function SignUp() {
                     </Box>
                     <SignUpHeader />
                     <SignUpForm handleSubmit={handleSubmit} />
-
                     <StyledSupportBtn />
                 </SignUpFlexBox>
             </SignUpBox>

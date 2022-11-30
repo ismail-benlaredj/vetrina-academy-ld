@@ -14,8 +14,8 @@ function App() {
       <ThemeProvider theme={theme()}>
         <CssBaseline />
         <BrowserRouter>
-          {/* <Routes /> */}
-          <SignUp />
+          <Routes />
+          {/* <SignUp /> */}
         </BrowserRouter>
       </ThemeProvider>
     </StyledEngineProvider>

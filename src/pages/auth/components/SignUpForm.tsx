@@ -69,11 +69,8 @@ export default function SignUpForm({ handleSubmit }: SignUpFormProps) {
                     <StyledLink href="#" >
                         {" Cookie Policy "}
                     </StyledLink >
-
                 </StyledConditionsTypography>
             </StyledConditionsBox>
-
-
             <Button
                 type="submit"
                 variant="contained"
