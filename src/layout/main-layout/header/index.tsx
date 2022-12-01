@@ -49,6 +49,17 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     alignItems: 'center',
     padding: theme.spacing(0, 1),
 }));
+
+const Notif = styled(Box)(({ theme }) => ({
+    width: '20px',
+    height: '20px',
+    backgroundColor: theme.palette.error.main,
+    borderRadius: 50,
+    top: '-2px',
+    right: '-4px',
+    position: 'absolute',
+}));
+
 export default function Header({ open }: AppBarProps) {
     const theme = useTheme();
     return (
@@ -65,19 +76,11 @@ export default function Header({ open }: AppBarProps) {
                     <Typography variant="h3" sx={{ fontWeight: 500 }}>
                         What's New
                     </Typography>
-                    <Box sx={{
-                        width: '20px',
-                        height: '20px',
-                        bgcolor: theme.palette.error.main,
-                        borderRadius: 50,
-                        top: '-2px',
-                        right: '-4px',
-                        position: 'absolute',
-                    }}>
+                    <Notif>
                         <Typography variant='h4' color='white' sx={{ fontWeight: 500 }}>
                             2
                         </Typography>
-                    </Box>
+                    </Notif>
                 </StyledIconBtn>
             </StyledToolbar>
         </AppBar>

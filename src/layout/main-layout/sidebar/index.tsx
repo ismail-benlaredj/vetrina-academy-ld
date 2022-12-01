@@ -13,6 +13,8 @@ import { drawerWidth } from '../../../constants/nav-itmes';
 import SelectMenu from 'pages/components/SelectMenu';
 import { Typography } from '@mui/material';
 import { Link } from "react-router-dom";
+import { SimpleBarStyle } from 'global-ui/SimpleBarStyle'
+
 
 
 
@@ -52,11 +54,12 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 const StyledDrawer = styled(Drawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         width: drawerWidth,
-        height: '100%',
+        minHeight: '100vh',
         flexShrink: 0,
         whiteSpace: 'nowrap',
         backgroundColor: theme.palette.common.white,
         boxSizing: 'border-box',
+        overflow: 'hidden',
         ...(open && {
             ...openedMixin(theme),
             '& .MuiDrawer-paper': openedMixin(theme),
@@ -67,6 +70,10 @@ const StyledDrawer = styled(Drawer, { shouldForwardProp: (prop) => prop !== 'ope
         }),
     }),
 );
+
+
+
+
 interface Props {
     open: boolean;
     handleDrawerState: () => void;
@@ -74,67 +81,73 @@ interface Props {
 
 export default function Sidebar({ open, handleDrawerState }: Props) {
     const theme = useTheme();
-
-
-
     return (
-        <StyledDrawer variant="permanent" open={open} className='test'>
-            <DrawerHeader>
-                <Box sx={{ width: "93.25px", display: open ? 'block' : 'none' }}>
-                    <Logo />
+        <StyledDrawer variant="permanent" open={open}>
+
+            {/* <Box className='scroller'> */}
+
+            <SimpleBarStyle style={{ minHeight: 300 }}>
+
+                <DrawerHeader>
+                    <Box sx={{ width: "93.25px", display: open ? 'block' : 'none' }}>
+                        <Logo />
+                    </Box>
+                    <IconButton onClick={handleDrawerState}>
+                        <AiOutlineMenu style={{ color: theme.palette.text.secondary }} />
+                    </IconButton>
+                </DrawerHeader>
+
+                <List sx={{
+                    backgroundColor: theme.palette.common.white,
+                    height: 'fit-content',
+                    pb: theme.spacing(5),
+                }}>
+                    {navItemsList.map((item: any) => (
+                        (item.type === 'group')
+                            ?
+                            (<NavCollapse groupItem={item} open={open} key={item.id} />)
+                            :
+                            (
+                                <Link key={item.id} to={item.link} >
+                                    <NavItem item={item} open={open} link={`/${item.link}`} />
+                                </Link>
+                            )
+
+                    ))}
+
+                    <Divider sx={{ my: theme.spacing(2) }} />
+                    {navItemSecondList.map((item: any) => (
+                        (item.type === 'group')
+                            ?
+                            (<NavCollapse groupItem={item} open={open} key={item.id} />)
+                            :
+                            (<NavItem item={item} open={open} key={item.id} />)
+
+                    ))}
+                </List>
+
+                <Box sx={{
+                    px: '20px', pb: theme.spacing(8),
+                    backgroundColor: theme.palette.common.white,
+                    display: open ? 'block' : 'none'
+
+                }}>
+                    <Typography
+                        color={theme.palette.text.primary}
+                        sx={{
+                            fontSize: '15px',
+                            fontWeight: '500',
+                            mb: theme.spacing(2),
+                            display: open ? 'block' : 'none'
+                        }}
+                    >Select your shop</Typography>
+                    <SelectMenu />
                 </Box>
 
-                <IconButton onClick={handleDrawerState}>
-                    <AiOutlineMenu style={{ color: theme.palette.text.secondary }} />
-                </IconButton>
-            </DrawerHeader>
-
-            <List sx={{
-                backgroundColor: theme.palette.common.white,
-                height: 'fit-content',
-                pb: theme.spacing(5),
-            }}>
-                {navItemsList.map((item: any) => (
-                    (item.type === 'group')
-                        ?
-                        (<NavCollapse groupItem={item} open={open} key={item.id} />)
-                        :
-                        (
-                            <Link key={item.id} to={item.link} >
-                                <NavItem item={item} open={open} link={`/${item.link}`} />
-                            </Link>
-                        )
-
-                ))}
-
-                <Divider sx={{ my: theme.spacing(2) }} />
-                {navItemSecondList.map((item: any) => (
-                    (item.type === 'group')
-                        ?
-                        (<NavCollapse groupItem={item} open={open} key={item.id} />)
-                        :
-                        (<NavItem item={item} open={open} key={item.id} />)
-
-                ))}
-            </List>
-            <Box sx={{
-                px: '20px', pb: theme.spacing(8),
-                backgroundColor: theme.palette.common.white,
-                display: open ? 'block' : 'none'
-
-            }}>
-                <Typography
-                    color={theme.palette.text.primary}
-                    sx={{
-                        fontSize: '15px',
-                        fontWeight: '500',
-                        mb: theme.spacing(2),
-                        display: open ? 'block' : 'none'
-                    }}
-                >Select your shop</Typography>
-                <SelectMenu />
-            </Box>
+                {/* </Box> */}
+            </SimpleBarStyle>
         </StyledDrawer>
+
 
     );
 }

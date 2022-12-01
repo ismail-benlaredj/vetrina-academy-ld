@@ -42,12 +42,7 @@ function BlogPost({ imgLink, title, meta, lable, postLink }: BlogCardProps) {
             width: "330px",
             height: "100px",
         }}>
-            <Box
-                sx={{
-                    display: 'flex',
-                }}>
-
-
+            <Box sx={{ display: 'flex' }}>
                 <img alt='Post' src={imgLink}
                     style={{
                         width: "100px",
@@ -55,7 +50,6 @@ function BlogPost({ imgLink, title, meta, lable, postLink }: BlogCardProps) {
                         objectFit: "cover",
                         marginRight: "16px"
                     }}
-
                 />
                 <Box
                     sx={{
@@ -132,7 +126,6 @@ export default function BlogCard() {
                                 lable={item.category}
                                 title={item.title}
                                 meta={item.read_time}
-
                             />
                         </Grid>
                     ))}
