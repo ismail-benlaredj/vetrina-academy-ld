@@ -6,7 +6,7 @@ export const useFetch = (url: string) => {
     const [error, setError] = useState<any>(null);
     const [loading, setLoading] = useState<boolean>(true);
 
-    const fetchData = async (): Promise<void> => {
+    useEffect(() => {
         fetch(url)
             .then((response) => response.json())
             .then((data) => {
@@ -14,11 +14,7 @@ export const useFetch = (url: string) => {
                 setLoading(false)
             })
             .catch((error) => setError(error));
-    };
-
-    useEffect(() => {
-        fetchData();
-    }, []);
+    }, [url]);
 
     return [data, error, loading] as const;
 };
