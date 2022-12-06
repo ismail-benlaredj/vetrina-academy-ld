@@ -4,7 +4,7 @@ import { RouteObject, useRoutes } from 'react-router-dom';
 import SuspenseComponent from "../global-ui/SuspenseComponent"
 import CustomPage from "../pages/components/CustomPage"
 
-import { navItemsList, navItemSecondList } from "../constants/nav-itmes"
+import { navItemsList } from "../constants/nav-itmes"
 
 const Dashboard = SuspenseComponent(lazy(() => import('../pages/dashboard')));
 const MainLayout = SuspenseComponent(lazy(() => import('../layout/main-layout')));
@@ -48,7 +48,6 @@ export default function AppRoutes() {
 
 
     ]
-    console.log(routes)
     return useRoutes(routes);
 }
 
