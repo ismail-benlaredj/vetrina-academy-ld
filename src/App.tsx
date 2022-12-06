@@ -4,8 +4,8 @@ import theme from './theme';
 import Routes from './routes';
 import { BrowserRouter } from 'react-router-dom';
 
-import SignIn from './pages/auth/SignIn';
-import SignUp from './pages/auth/SignUp';
+// import SignIn from './pages/auth/SignIn';
+// import SignUp from './pages/auth/SignUp';
 import './App.css';
 
 function App() {
