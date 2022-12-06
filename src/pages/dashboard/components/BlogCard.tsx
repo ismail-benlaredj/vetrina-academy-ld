@@ -79,7 +79,7 @@ function BlogPost({ imgLink, title, meta, lable, postLink }: BlogCardProps) {
 
 export default function BlogCard() {
     const theme = useTheme();
-    const [data, error, loading] = useFetch('https://api.vetrinalive.com/api/blog-posts');
+    const [data] = useFetch('https://api.vetrinalive.com/api/blog-posts');
 
     return (
         <CardContainer>
@@ -129,8 +129,6 @@ export default function BlogCard() {
                             />
                         </Grid>
                     ))}
-
-
                 </Grid>
 
             </Box>
